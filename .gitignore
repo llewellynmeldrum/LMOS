@@ -1,1 +1,6 @@
 *.o
+*.json
+.clang*
+*.iso
+isodir/
+.cache/
