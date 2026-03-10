@@ -1,6 +1,3 @@
-*.o
-*.json
-.clang*
 *.iso
-isodir/
-.cache/
+isodir
+sysroot
