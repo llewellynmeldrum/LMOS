@@ -1,12 +1,4 @@
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
-
-#include "vga_helper.h"
-
-#if defined(__linux__)
-#error "Bro forgot to use the cross compiler"
-#endif
+#include <kernel/tty.h>
 
 void kernel_main(void) {
     term_setup();
