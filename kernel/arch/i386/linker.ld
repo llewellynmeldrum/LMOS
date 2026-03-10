@@ -1,18 +1,19 @@
 /*
-Begin execution at this symbol (the entry point in boot.s)
+ * Marks _start as the entry point for the kernel.
 */
 ENTRY(_start)
 
 SECTIONS{
-    /*2MiB is recommended for multiboot2*/
-    . = 2M;
+    /* 1MiB is the recommended size for multiboot, 2MiB is the recommended size for multiboot2*/
+    . = 1M;
 
 
     .text BLOCK(4K) : ALIGN(4K){
-        *(.multiboot)   /* 1. The multiboot header. Recall that it must be very early.*/
+        *(.multiboot)   /* 1. The multiboot header. It must be very early.*/
         *(.text)        /* 2. contains _main entry point*/
     }
-    /* Read only data which is initailized */
+
+    /* Read only data that is initailized */
     .rodata BLOCK(4K) : ALIGN(4K){
         *(.rodata)
     }
